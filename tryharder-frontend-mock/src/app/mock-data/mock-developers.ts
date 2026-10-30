@@ -1,0 +1,148 @@
+import { Developer } from '../models/developer.model';
+
+export const MOCK_DEVELOPERS: Developer[] = [
+  {
+    id: 'd1',
+    name: 'sunset visitor',
+    country: 'Canada',
+    foundedYear: 2020,
+  },
+  {
+    id: 'd2',
+    name: 'Giant Squid',
+    country: 'United States',
+    foundedYear: 2013,
+  },
+  {
+    id: 'd3',
+    name: 'FromSoftware',
+    country: 'Japan',
+    foundedYear: 1986,
+  },
+  {
+    id: 'd4',
+    name: 'Rocksteady Studios',
+    country: 'United Kingdom',
+    foundedYear: 2004,
+  },
+  {
+    id: 'd5',
+    name: 'GoodbyeWorld Games',
+    country: 'United States',
+    foundedYear: 2013,
+  },
+  {
+    id: 'd6',
+    name: 'Maddy Makes Games',
+    country: 'Canada',
+    foundedYear: 2013,
+  },
+  {
+    id: 'd7',
+    name: 'Remedy Entertainment',
+    country: 'Finland',
+    foundedYear: 1995,
+  },
+  {
+    id: 'd8',
+    name: 'Sucker Punch Productions',
+    country: 'United States',
+    foundedYear: 1997,
+  },
+  {
+    id: 'd9',
+    name: 'Santa Monica Studio',
+    country: 'United States',
+    foundedYear: 1999,
+  },
+  {
+    id: 'd10',
+    name: 'The Fullbright Company',
+    country: 'United States',
+    foundedYear: 2012,
+  },
+  {
+    id: 'd11',
+    name: 'Guerrilla Games',
+    country: 'Netherlands',
+    foundedYear: 2000,
+  },
+  {
+    id: 'd12',
+    name: 'Playdead',
+    country: 'Denmark',
+    foundedYear: 2006,
+  },
+  {
+    id: 'd13',
+    name: 'thatgamecompany',
+    country: 'United States',
+    foundedYear: 2006,
+  },
+  {
+    id: 'd14',
+    name: 'Round8 Studio',
+    country: 'South Korea',
+    foundedYear: 2018,
+  },
+  {
+    id: 'd15',
+    name: 'Insomniac Games',
+    country: 'United States',
+    foundedYear: 1994,
+  },
+  {
+    id: 'd16',
+    name: 'Mojang Studios',
+    country: 'Sweden',
+    foundedYear: 2009,
+  },
+  {
+    id: 'd17',
+    name: 'PlatinumGames',
+    country: 'Japan',
+    foundedYear: 2006,
+  },
+  {
+    id: 'd18',
+    name: 'Toylogic',
+    country: 'Japan',
+    foundedYear: 2006,
+  },
+  {
+    id: 'd19',
+    name: 'Mobius Digital',
+    country: 'United States',
+    foundedYear: 2013,
+  },
+  {
+    id: 'd20',
+    name: 'Valve',
+    country: 'United States',
+    foundedYear: 1996,
+  },
+  {
+    id: 'd21',
+    name: 'Crystal Dynamics',
+    country: 'United States',
+    foundedYear: 1992,
+  },
+  {
+    id: 'd22',
+    name: 'Bluepoint Games',
+    country: 'United States',
+    foundedYear: 2006,
+  },
+  {
+    id: 'd23',
+    name: 'Everything Unlimited Ltd.',
+    country: 'United States',
+    foundedYear: 2015,
+  },
+  {
+    id: 'd24',
+    name: 'CD Projekt Red',
+    country: 'Poland',
+    foundedYear: 2002,
+  },
+];
