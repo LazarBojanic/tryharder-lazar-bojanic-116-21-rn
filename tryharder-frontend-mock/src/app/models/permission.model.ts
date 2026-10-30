@@ -1,0 +1,59 @@
+
+export const DEVELOPER_PERMISSIONS = [
+  'DEVELOPER_CREATE',
+  'DEVELOPER_READ',
+  'DEVELOPER_UPDATE',
+  'DEVELOPER_DELETE',
+] as const;
+
+export const GAME_PERMISSIONS = [
+  'GAME_CREATE',
+  'GAME_READ',
+  'GAME_UPDATE',
+  'GAME_DELETE',
+] as const;
+
+export const GAME_ENTRY_PERMISSIONS = [
+  'GAME_ENTRY_CREATE',
+  'GAME_ENTRY_READ',
+  'GAME_ENTRY_UPDATE',
+  'GAME_ENTRY_DELETE',
+] as const;
+
+export const GENRE_PERMISSIONS = [
+  'GENRE_CREATE',
+  'GENRE_READ',
+  'GENRE_UPDATE',
+  'GENRE_DELETE',
+] as const;
+
+export const PLATFORM_PERMISSIONS = [
+  'PLATFORM_CREATE',
+  'PLATFORM_READ',
+  'PLATFORM_UPDATE',
+  'PLATFORM_DELETE',
+] as const;
+
+export const USER_PERMISSIONS = [
+  'USER_CREATE',
+  'USER_READ',
+  'USER_UPDATE',
+  'USER_DELETE',
+] as const;
+
+export type Permission =
+  | (typeof DEVELOPER_PERMISSIONS)[number]
+  | (typeof GAME_PERMISSIONS)[number]
+  | (typeof GAME_ENTRY_PERMISSIONS)[number]
+  | (typeof GENRE_PERMISSIONS)[number]
+  | (typeof PLATFORM_PERMISSIONS)[number]
+  | (typeof USER_PERMISSIONS)[number];
+
+export const ALL_PERMISSIONS: Permission[] = [
+  ...DEVELOPER_PERMISSIONS,
+  ...GAME_PERMISSIONS,
+  ...GAME_ENTRY_PERMISSIONS,
+  ...GENRE_PERMISSIONS,
+  ...PLATFORM_PERMISSIONS,
+  ...USER_PERMISSIONS,
+];
