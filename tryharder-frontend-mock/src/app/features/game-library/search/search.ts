@@ -173,6 +173,63 @@ import { GAME_ENTRY_PERMISSIONS, Permission } from '../../../models/permission.m
                     }
                   </div>
 
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+                    <mat-form-field appearance="outline" class="w-full">
+                      <mat-label>Platform</mat-label>
+                      <mat-select
+                        [(ngModel)]="editForm.platformId"
+                        name="editPlatform"
+                        [disabled]="!canUpdate()"
+                      >
+                        @for (p of library.platforms(); track p.id) {
+                          <mat-option [value]="p.id">{{ p.name }}</mat-option>
+                        }
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-full">
+                      <mat-label>Rating (1 - 10)</mat-label>
+                      <mat-select
+                        [(ngModel)]="editForm.rating"
+                        name="editRating"
+                        [disabled]="!canUpdate()"
+                      >
+                        <mat-option [value]="null">No Rating</mat-option>
+                        @for (r of [1,2,3,4,5,6,7,8,9,10]; track r) {
+                          <mat-option [value]="r">{{ r }} / 10</mat-option>
+                        }
+                      </mat-select>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="w-full">
+                      <mat-label>Playtime (Minutes)</mat-label>
+                      <input
+                        matInput
+                        type="number"
+                        min="0"
+                        [(ngModel)]="editForm.playtimeMinutes"
+                        name="editPlaytime"
+                        [disabled]="!canUpdate()"
+                        placeholder="0"
+                      />
+                      <span matSuffix class="text-xs text-gray-500 pr-2">
+                        ({{ formatPlaytimeHours(editForm.playtimeMinutes) }})
+                      </span>
+                    </mat-form-field>
+                  </div>
+
+                  <mat-form-field appearance="outline" class="w-full">
+                    <mat-label>Personal Notes & Review</mat-label>
+                    <textarea
+                      matInput
+                      rows="3"
+                      [(ngModel)]="editForm.notes"
+                      name="editNotes"
+                      [disabled]="!canUpdate()"
+                      placeholder="Add personal thoughts, progress notes, or gameplay review..."
+                    ></textarea>
+                  </mat-form-field>
+
                   <div class="flex flex-wrap items-center justify-between text-xs text-gray-500 bg-gray-50 p-2 rounded border border-gray-200">
                     <span>Added: {{ entry.createdAt | date: 'medium' }}</span>
                     <span>Last Updated: {{ entry.updatedAt | date: 'medium' }}</span>
@@ -185,6 +242,30 @@ import { GAME_ENTRY_PERMISSIONS, Permission } from '../../../models/permission.m
                   }
 
                   <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <button
+                      mat-flat-button
+                      color="primary"
+                      type="button"
+                      [disabled]="!canUpdate()"
+                      (click)="saveEntryEdit(entry)"
+                    >
+                      <mat-icon>save</mat-icon>
+                      <span>Save Changes</span>
+                    </button>
+
+                    @if (canDelete()) {
+                      <button
+                        mat-stroked-button
+                        color="warn"
+                        type="button"
+                        (click)="deleteEntry(entry)"
+                        class="!text-red-600 !border-red-300"
+                      >
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete Entry</span>
+                      </button>
+                    }
+
                     <button
                       mat-stroked-button
                       type="button"
@@ -303,6 +384,17 @@ import { GAME_ENTRY_PERMISSIONS, Permission } from '../../../models/permission.m
                     <mat-icon class="text-xs">tune</mat-icon>
                     <span>Manage</span>
                   </button>
+                  @if (canDelete()) {
+                    <button
+                      mat-icon-button
+                      color="warn"
+                      (click)="deleteEntry(entry)"
+                      title="Delete Entry"
+                      class="!text-red-500"
+                    >
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  }
                 </div>
               </td>
             </ng-container>
