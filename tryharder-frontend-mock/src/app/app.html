@@ -1,12 +1,12 @@
 @if (auth.currentUser(); as user) {
-  <header class="app-header">
-    <div class="brand">Tryharder</div>
-    <div class="user-area">
-      <span class="user-name">{{ user.firstName }} {{ user.lastName }}</span>
-      <button class="logout-btn" (click)="auth.logout()">Logout</button>
+  <header class="flex items-center justify-between bg-slate-800 px-6 py-3 text-white">
+    <div class="text-lg font-bold">Tryharder</div>
+    <div class="flex items-center gap-3">
+      <span class="text-sm">{{ user.firstName }} {{ user.lastName }}</span>
+      <button class="border border-white px-3 py-1 text-sm" (click)="auth.logout()">Logout</button>
     </div>
   </header>
 }
-<main class="page">
+<main class="mx-auto max-w-6xl p-6">
   <router-outlet />
 </main>
