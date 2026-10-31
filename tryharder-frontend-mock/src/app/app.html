@@ -1,1 +1,12 @@
-<router-outlet />
+@if (auth.currentUser(); as user) {
+  <header class="app-header">
+    <div class="brand">Tryharder</div>
+    <div class="user-area">
+      <span class="user-name">{{ user.firstName }} {{ user.lastName }}</span>
+      <button class="logout-btn" (click)="auth.logout()">Logout</button>
+    </div>
+  </header>
+}
+<main class="page">
+  <router-outlet />
+</main>
