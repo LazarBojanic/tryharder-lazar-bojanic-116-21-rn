@@ -61,3 +61,9 @@ body {
     padding: 12px;
   }
 }
+
+.login-hint {
+  color: #999;
+  font-size: 12px;
+  text-align: center;
+}
