@@ -17,7 +17,7 @@ import { AuthService } from '../../services/auth.service';
         </div>
         <div class="form-row">
           <label for="password">Password</label>
-          <input id="password" type="text" [(ngModel)]="password" name="password" class="text-input" />
+          <input id="password" type="password" [(ngModel)]="password" name="password" class="text-input" />
         </div>
         @if (error()) {
           <p class="error">{{ error() }}</p>
