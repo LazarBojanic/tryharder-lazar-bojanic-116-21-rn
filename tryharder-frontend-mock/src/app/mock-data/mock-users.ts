@@ -1,5 +1,10 @@
-import type { User } from '../models/user.model';
-import { ALL_PERMISSIONS, GAME_ENTRY_PERMISSIONS } from '../models/permission.model';
+
+import bcrypt from 'bcryptjs';
+import type { User, AuthUser } from '../models/user.model';
+import {
+  ALL_PERMISSIONS,
+  GAME_ENTRY_PERMISSIONS,
+} from '../models/permission.model';
 
 export const MOCK_USERS: User[] = [
   {
@@ -7,7 +12,6 @@ export const MOCK_USERS: User[] = [
     firstName: 'Admin',
     lastName: 'User',
     email: 'admin@tryharder.com',
-    password: 'admin123',
     role: 'ADMIN',
     permissions: [...ALL_PERMISSIONS],
     createdAt: new Date('2026-01-01'),
@@ -18,7 +22,6 @@ export const MOCK_USERS: User[] = [
     firstName: 'John',
     lastName: 'Gamer',
     email: 'john@tryharder.com',
-    password: 'gamer123',
     role: 'USER',
     permissions: [...GAME_ENTRY_PERMISSIONS],
     createdAt: new Date('2026-02-01'),
@@ -29,7 +32,6 @@ export const MOCK_USERS: User[] = [
     firstName: 'Jane',
     lastName: 'Player',
     email: 'jane@tryharder.com',
-    password: 'player123',
     role: 'USER',
     permissions: [
       'GAME_ENTRY_CREATE',
@@ -37,6 +39,30 @@ export const MOCK_USERS: User[] = [
       'GAME_ENTRY_UPDATE',
       'GAME_ENTRY_DELETE',
     ],
+    createdAt: new Date('2026-03-01'),
+    updatedAt: new Date('2026-03-01'),
+  },
+];
+
+export const MOCK_AUTH_USERS: AuthUser[] = [
+  {
+    id: 'au1',
+    userId: 'u1',
+    passwordHash: bcrypt.hashSync('admin123', 10),
+    createdAt: new Date('2026-01-01'),
+    updatedAt: new Date('2026-01-01'),
+  },
+  {
+    id: 'au2',
+    userId: 'u2',
+    passwordHash: bcrypt.hashSync('gamer123', 10),
+    createdAt: new Date('2026-02-01'),
+    updatedAt: new Date('2026-02-01'),
+  },
+  {
+    id: 'au3',
+    userId: 'u3',
+    passwordHash: bcrypt.hashSync('player123', 10),
     createdAt: new Date('2026-03-01'),
     updatedAt: new Date('2026-03-01'),
   },
