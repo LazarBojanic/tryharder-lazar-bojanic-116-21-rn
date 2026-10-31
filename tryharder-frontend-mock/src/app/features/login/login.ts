@@ -8,79 +8,46 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [FormsModule],
   template: `
-    <div class="login-box">
-      <h2>Sign in to Tryharder</h2>
-      <form (ngSubmit)="onSubmit()">
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" type="email" [(ngModel)]="email" name="email" class="text-input" />
+    <div class="mx-auto mt-16 max-w-md rounded border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-bold text-gray-800">Sign in to Tryharder</h2>
+      <p class="mb-5 text-sm text-gray-500">Enter your credentials to access your library</p>
+      <form (ngSubmit)="onSubmit()" class="flex flex-col gap-3">
+        <div>
+          <label for="email" class="mb-1 block text-sm font-semibold text-gray-700">Email</label>
+          <input
+            id="email"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            required
+            class="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+          />
         </div>
-        <div class="form-row">
-          <label for="password">Password</label>
-          <input id="password" type="password" [(ngModel)]="password" name="password" class="text-input" />
+        <div>
+          <label for="password" class="mb-1 block text-sm font-semibold text-gray-700">Password</label>
+          <input
+            id="password"
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+            class="w-full rounded border border-gray-300 px-3 py-2 text-sm"
+          />
         </div>
         @if (error()) {
-          <p class="error">{{ error() }}</p>
+          <div class="rounded border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+            {{ error() }}
+          </div>
         }
-        <button type="submit" class="primary-btn">Sign in</button>
+        <button
+          type="submit"
+          class="w-full rounded bg-blue-600 py-2 text-sm font-semibold text-white hover:bg-blue-700"
+        >
+          Sign in
+        </button>
       </form>
     </div>
   `,
-  styles: [`
-    .login-box {
-      width: 400px;
-      margin: 60px auto;
-      padding: 24px;
-      background: white;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      font-family: Arial, sans-serif;
-    }
-    .login-box h2 {
-      margin: 0 0 20px 0;
-      color: #333;
-      text-align: center;
-    }
-    .form-row {
-      margin-bottom: 14px;
-    }
-    .form-row label {
-      display: block;
-      margin-bottom: 4px;
-      font-weight: bold;
-      font-size: 13px;
-      color: #444;
-    }
-    .text-input {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #bbb;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-    .text-input:focus {
-      outline: none;
-      border-color: #3f51b5;
-    }
-    .primary-btn {
-      width: 100%;
-      padding: 10px;
-      background-color: #3f51b5;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-      font-weight: bold;
-    }
-    .primary-btn:hover {
-      background-color: #303f9f;
-    }
-    .error {
-      color: red;
-      font-size: 13px;
-      margin: 0 0 12px 0;
-    }
-  `],
 })
 export class LoginComponent {
   private auth = inject(AuthService);
