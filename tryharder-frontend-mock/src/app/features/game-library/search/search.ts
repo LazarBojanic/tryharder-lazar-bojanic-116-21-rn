@@ -99,6 +99,108 @@ import { GAME_ENTRY_PERMISSIONS, Permission } from '../../../models/permission.m
         </mat-card-content>
       </mat-card>
 
+      @if (selectedEntry(); as entry) {
+        @if (getGame(entry.gameId); as game) {
+          <mat-card class="border-2 border-indigo-200">
+            <mat-card-header class="mb-4">
+              <mat-card-title class="!text-xl !font-bold flex items-center gap-2">
+                <mat-icon color="primary">videogame_asset</mat-icon>
+                <span>Game Entry Details: {{ game.title }}</span>
+              </mat-card-title>
+              <mat-card-subtitle>
+                Manage status, platform, playtime, rating, and notes
+              </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex flex-col items-center gap-3 rounded border border-gray-200 bg-gray-50 p-4 text-center">
+                  @if (game.coverImageUrl) {
+                    <img
+                      [src]="game.coverImageUrl"
+                      [alt]="game.title"
+                      class="h-64 w-48 rounded object-contain bg-white shadow-sm border border-gray-300"
+                    />
+                  } @else {
+                    <div class="flex h-64 w-48 items-center justify-center rounded bg-gray-100 text-gray-400 border border-gray-300">
+                      <mat-icon class="!text-5xl">image</mat-icon>
+                    </div>
+                  }
+
+                  <div class="flex flex-col gap-1 w-full">
+                    <h3 class="font-bold text-gray-900 text-base">{{ game.title }}</h3>
+                    <p class="text-xs text-gray-500">{{ game.releaseYear }} &bull; {{ game.genre }}</p>
+
+                    @if (getDeveloper(game.developer); as dev) {
+                      <div class="mt-2 flex items-center justify-center gap-2 rounded bg-white p-1.5 border border-gray-200">
+                        @if (dev.logoUrl) {
+                          <img
+                            [src]="dev.logoUrl"
+                            [alt]="dev.name"
+                            class="h-7 w-7 rounded object-contain bg-white border border-gray-200 p-0.5 shrink-0"
+                          />
+                        }
+                        <span class="text-xs font-semibold text-gray-700">{{ dev.name }}</span>
+                      </div>
+                    } @else {
+                      <span class="text-xs text-gray-600 font-medium">Dev: {{ game.developer }}</span>
+                    }
+                  </div>
+                </div>
+
+                <div class="md:col-span-2 flex flex-col gap-4">
+                  <div class="flex flex-col gap-2">
+                    <label class="text-sm font-semibold text-gray-700">Update Game Status</label>
+                    <div class="flex flex-wrap gap-2">
+                      @for (st of allGameStatuses; track st) {
+                        <button
+                          mat-stroked-button
+                          type="button"
+                          [color]="entry.status === st ? 'primary' : undefined"
+                          [disabled]="!canUpdate()"
+                          (click)="onUpdateStatus(entry, st)"
+                          [class.!bg-indigo-50]="entry.status === st"
+                          [class.!font-bold]="entry.status === st"
+                        >
+                          <mat-icon *ngIf="entry.status === st" class="text-xs">check</mat-icon>
+                          <span>{{ st }}</span>
+                        </button>
+                      }
+                    </div>
+                    @if (!canUpdate()) {
+                      <p class="text-xs text-amber-700">
+                        * You do not have permissions to modify this entry.
+                      </p>
+                    }
+                  </div>
+
+                  <div class="flex flex-wrap items-center justify-between text-xs text-gray-500 bg-gray-50 p-2 rounded border border-gray-200">
+                    <span>Added: {{ entry.createdAt | date: 'medium' }}</span>
+                    <span>Last Updated: {{ entry.updatedAt | date: 'medium' }}</span>
+                  </div>
+
+                  @if (editMessage()) {
+                    <div class="rounded bg-green-50 p-3 text-sm text-green-700 border border-green-200">
+                      {{ editMessage() }}
+                    </div>
+                  }
+
+                  <div class="flex flex-wrap items-center gap-3 pt-2">
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      (click)="closeEntryDetails()"
+                    >
+                      <mat-icon>close</mat-icon>
+                      <span>Close</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        }
+      }
+
       <mat-card>
         <mat-card-content class="!p-0">
           <table mat-table [dataSource]="filteredEntries()" class="w-full">
@@ -188,6 +290,23 @@ import { GAME_ENTRY_PERMISSIONS, Permission } from '../../../models/permission.m
               </td>
             </ng-container>
 
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef>Actions</th>
+              <td mat-cell *matCellDef="let entry">
+                <div class="flex items-center gap-1">
+                  <button
+                    mat-stroked-button
+                    color="primary"
+                    size="small"
+                    (click)="openEntryDetails(entry)"
+                  >
+                    <mat-icon class="text-xs">tune</mat-icon>
+                    <span>Manage</span>
+                  </button>
+                </div>
+              </td>
+            </ng-container>
+
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr
               mat-row
@@ -219,6 +338,7 @@ export class GameLibrarySearchComponent {
     'rating',
     'playtime',
     'createdAt',
+    'actions',
   ];
 
   readonly title = signal('');
