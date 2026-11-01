@@ -1,5 +1,5 @@
 @if (auth.currentUser(); as user) {
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="shadow-sm">
     <div class="mx-auto flex w-full max-w-7xl items-center justify-between">
       <div class="flex items-center gap-6">
         <div class="flex items-center gap-2 font-bold text-lg">
@@ -7,23 +7,62 @@
           <span>Tryharder</span>
         </div>
         <nav class="flex items-center gap-1">
-          <a mat-button routerLink="/library/search" routerLinkActive="bg-white/20" class="flex items-center gap-1.5">
+          <a
+            mat-button
+            routerLink="/library/search"
+            routerLinkActive="bg-white/20"
+            class="flex items-center gap-1.5"
+          >
             <mat-icon class="text-sm">list</mat-icon>
             <span>Library</span>
           </a>
-          <a mat-button routerLink="/library/create" routerLinkActive="bg-white/20" class="flex items-center gap-1.5">
+          <a
+            mat-button
+            routerLink="/library/create"
+            routerLinkActive="bg-white/20"
+            class="flex items-center gap-1.5"
+          >
             <mat-icon class="text-sm">add_circle</mat-icon>
             <span>Add Game</span>
           </a>
-          <a mat-button routerLink="/admin" routerLinkActive="bg-white/20" class="flex items-center gap-1.5">
-            <mat-icon class="text-sm">admin_panel_settings</mat-icon>
-            <span>Admin</span>
+          @if (user.role === 'ADMIN') {
+            <a
+              mat-button
+              routerLink="/admin"
+              routerLinkActive="bg-white/20"
+              class="flex items-center gap-1.5"
+            >
+              <mat-icon class="text-sm">admin_panel_settings</mat-icon>
+              <span>Admin</span>
+            </a>
+          }
+          <a
+            mat-button
+            routerLink="/errors"
+            routerLinkActive="bg-white/20"
+            class="flex items-center gap-1.5"
+          >
+            <mat-icon class="text-sm">error_outline</mat-icon>
+            <span>Errors</span>
           </a>
         </nav>
       </div>
+
       <div class="flex items-center gap-3">
-        <span class="text-sm font-medium">{{ user.firstName }} {{ user.lastName }}</span>
-        <button mat-stroked-button color="accent" class="!text-white !border-white/50" (click)="auth.logout()">
+        <span class="text-sm font-medium">
+          {{ user.firstName }} {{ user.lastName }}
+        </span>
+        <mat-chip-set>
+          <mat-chip [highlighted]="user.role === 'ADMIN'">
+            {{ user.role }}
+          </mat-chip>
+        </mat-chip-set>
+        <button
+          mat-stroked-button
+          color="accent"
+          class="!text-white !border-white/50"
+          (click)="auth.logout()"
+        >
           <mat-icon>logout</mat-icon>
           <span>Logout</span>
         </button>

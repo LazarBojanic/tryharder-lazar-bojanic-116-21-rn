@@ -65,13 +65,15 @@ export type AdminTab = 'users' | 'entries' | 'games' | 'developers' | 'platforms
           >
             Users
           </button>
-          <button
-            type="button"
-            (click)="selectTab('entries')"
-            [class]="activeTab() === 'entries' ? activeTabClass : inactiveTabClass"
-          >
-            Game Entries
-          </button>
+          @if (auth.currentUser()?.role === 'ADMIN' && auth.hasPermission('GAME_ENTRY_READ')) {
+            <button
+              type="button"
+              (click)="selectTab('entries')"
+              [class]="activeTab() === 'entries' ? activeTabClass : inactiveTabClass"
+            >
+              Game Entries
+            </button>
+          }
           <button
             type="button"
             (click)="selectTab('games')"

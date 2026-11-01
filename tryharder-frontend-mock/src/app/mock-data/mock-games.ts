@@ -7,6 +7,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2024,
     developer: 'sunset visitor',
     genre: 'Adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/3/3f/1000xRESIST_Cover.jpg',
   },
   {
     id: 'g2',
@@ -14,6 +15,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2016,
     developer: 'Giant Squid',
     genre: 'Adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/7/73/Abzu.jpg',
   },
   {
     id: 'g3',
@@ -21,6 +23,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2023,
     developer: 'FromSoftware',
     genre: 'Mecha action',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/8/89/Armored_Core_VI_Fires_of_Rubicon_cover_art.jpg',
   },
   {
     id: 'g4',
@@ -28,6 +31,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2015,
     developer: 'Rocksteady Studios',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/6c/Batman_Arkham_Knight_Cover_Art.jpg',
   },
   {
     id: 'g5',
@@ -35,6 +39,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2021,
     developer: 'GoodbyeWorld Games',
     genre: 'Narrative adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/7/75/Before_Your_Eyes_cover.jpg',
   },
   {
     id: 'g6',
@@ -42,6 +47,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2018,
     developer: 'Maddy Makes Games',
     genre: 'Platformer',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0f/Celeste_box_art_full.png',
   },
   {
     id: 'g7',
@@ -49,6 +55,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2019,
     developer: 'Remedy Entertainment',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e5/Control_game_cover_art.jpg',
   },
   {
     id: 'g8',
@@ -56,6 +63,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2016,
     developer: 'FromSoftware',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/b/bb/Dark_souls_3_cover_art.jpg',
   },
   {
     id: 'g9',
@@ -63,6 +71,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2015,
     developer: 'FromSoftware',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/ed/Dark_Souls_II_cover.jpg',
   },
   {
     id: 'g10',
@@ -70,6 +79,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2022,
     developer: 'FromSoftware',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Elden_Ring_Box_art.jpg',
   },
   {
     id: 'g11',
@@ -77,6 +87,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2020,
     developer: 'Sucker Punch Productions',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/b/b6/Ghost_of_Tsushima.jpg',
   },
   {
     id: 'g12',
@@ -84,6 +95,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2018,
     developer: 'Santa Monica Studio',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a7/God_of_War_4_cover.jpg',
   },
   {
     id: 'g13',
@@ -91,6 +103,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2022,
     developer: 'Santa Monica Studio',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/ee/God_of_War_Ragnar%C3%B6k_cover.jpg',
   },
   {
     id: 'g14',
@@ -98,6 +111,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2013,
     developer: 'The Fullbright Company',
     genre: 'Adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Gone_Home.png',
   },
   {
     id: 'g15',
@@ -105,6 +119,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2022,
     developer: 'Guerrilla Games',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/69/Horizon_Forbidden_West_cover_art.jpg',
   },
   {
     id: 'g16',
@@ -112,6 +127,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2017,
     developer: 'Guerrilla Games',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/3/3e/Horizon_Zero_Dawn_cover_art.jpg',
   },
   {
     id: 'g17',
@@ -119,6 +135,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2014,
     developer: 'Sucker Punch Productions',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/3/34/Infamous_second_son_boxart.jpg',
   },
   {
     id: 'g18',
@@ -126,6 +143,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2016,
     developer: 'Playdead',
     genre: 'Puzzle-platformer',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/5/50/INSIDE_Xbox_One_cover_art.png',
   },
   {
     id: 'g19',
@@ -133,6 +151,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2012,
     developer: 'thatgamecompany',
     genre: 'Adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/64/Journey_Title_Poster.png',
   },
   {
     id: 'g20',
@@ -140,6 +159,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2023,
     developer: 'Round8 Studio',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/d/de/Lies_of_p_cover_art.jpg',
   },
   {
     id: 'g21',
@@ -147,6 +167,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2018,
     developer: 'Insomniac Games',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/e/e1/Spider-Man_PS4_cover.jpg',
   },
   {
     id: 'g22',
@@ -154,6 +175,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2020,
     developer: 'Insomniac Games',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a3/Spider-Man_Miles_Morales.jpeg',
   },
   {
     id: 'g23',
@@ -161,6 +183,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2011,
     developer: 'Mojang Studios',
     genre: 'Sandbox',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/commons/3/37/Minecraft_Key-art.png',
   },
   {
     id: 'g24',
@@ -168,6 +191,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2017,
     developer: 'PlatinumGames',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/2/21/Nier_Automata_cover_art.jpg',
   },
   {
     id: 'g25',
@@ -175,6 +199,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2021,
     developer: 'Toylogic',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/4/4a/Nier_Replicant_remake_art.png',
   },
   {
     id: 'g26',
@@ -182,6 +207,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2019,
     developer: 'Mobius Digital',
     genre: 'Adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f6/Outer_Wilds_Steam_artwork.jpg',
   },
   {
     id: 'g27',
@@ -189,6 +215,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2007,
     developer: 'Valve',
     genre: 'Puzzle-platformer',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/9/9f/Portal_standalonebox.jpg',
   },
   {
     id: 'g28',
@@ -196,6 +223,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2011,
     developer: 'Valve',
     genre: 'Puzzle-platformer',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Portal2cover.jpg',
   },
   {
     id: 'g29',
@@ -203,6 +231,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2015,
     developer: 'Crystal Dynamics',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/2/29/Rise_of_the_Tomb_Raider.jpg',
   },
   {
     id: 'g30',
@@ -210,6 +239,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2019,
     developer: 'FromSoftware',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/6/6e/Sekiro_art.jpg',
   },
   {
     id: 'g31',
@@ -217,6 +247,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2018,
     developer: 'Bluepoint Games',
     genre: 'Action-adventure',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/a/a4/ShadowOfTheColossus2018.jpg',
   },
   {
     id: 'g32',
@@ -224,6 +255,7 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2015,
     developer: 'Everything Unlimited Ltd.',
     genre: 'Interactive fiction',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/d/df/The_beginners_guide_cover_art.jpg',
   },
   {
     id: 'g33',
@@ -231,5 +263,6 @@ export const MOCK_GAMES: Game[] = [
     releaseYear: 2015,
     developer: 'CD Projekt Red',
     genre: 'Action RPG',
+    coverImageUrl: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg',
   },
 ];
