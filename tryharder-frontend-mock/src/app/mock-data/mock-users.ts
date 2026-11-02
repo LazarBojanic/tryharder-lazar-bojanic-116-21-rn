@@ -33,12 +33,7 @@ export const MOCK_USERS: User[] = [
     lastName: 'Player',
     email: 'jane@tryharder.com',
     role: 'USER',
-    permissions: [
-      'GAME_ENTRY_CREATE',
-      'GAME_ENTRY_READ',
-      'GAME_ENTRY_UPDATE',
-      'GAME_ENTRY_DELETE',
-    ],
+    permissions: [...GAME_ENTRY_PERMISSIONS],
     createdAt: new Date('2026-03-01'),
     updatedAt: new Date('2026-03-01'),
   },
