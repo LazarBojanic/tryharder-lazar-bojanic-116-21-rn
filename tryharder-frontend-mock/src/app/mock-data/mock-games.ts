@@ -235,7 +235,7 @@ export const MOCK_GAMES: Game[] = [
   },
   {
     id: 'g30',
-    title: 'Sekiro Shadow Die Twice',
+    title: 'Sekiro Shadows Die Twice',
     releaseYear: 2019,
     developer: 'FromSoftware',
     genre: 'Action-adventure',

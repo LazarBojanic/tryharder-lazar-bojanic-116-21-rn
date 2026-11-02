@@ -31,7 +31,7 @@ describe('GameLibrarySearchComponent', () => {
     const component = fixture.componentInstance;
     fixture.detectChanges();
 
-    expect(component.filteredEntries().length).toBe(2);
+    expect(component.filteredEntries().length).toBe(3);
     expect(component.filteredEntries().every((entry) => entry.userId === 'u1')).toBe(true);
     expect(component.filteredEntries().some((entry) => entry.id === 'e1')).toBe(false);
   });

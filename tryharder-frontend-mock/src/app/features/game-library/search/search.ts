@@ -575,4 +575,5 @@ export class GameLibrarySearchComponent {
     return `${hrs} hrs`;
   }
 
+
 }
